@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pista</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .barra {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            cursor: pointer; /* Cambia el cursor al pasar sobre la barra */
+        }
+        .boton-siguiente {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="barra" onclick="cambiarTexto()">Click me</div>
+    <button class="boton-siguiente" onclick="validarTexto()">Siguiente</button>
+
+    <script>
+        function cambiarTexto() {
+            const barra = document.querySelector('.barra');
+            barra.textContent = "aca va la oracion"; // Cambia el texto al hacer clic
+        }
+
+        function validarTexto() {
+            const respuesta = prompt("Eres:");
+            if (respuesta === null) {
+                // El usuario canceló el prompt
+                return;
+            }
+            if (respuesta.trim().toLowerCase() === "eres") {
+                // Si la respuesta es correcta, redirigir a la siguiente página
+                window.location.href = "pagina_siguiente.html"; // Cambia esto a la URL de la siguiente página
+            } else {
+                alert("Respuesta incorrecta. Inténtalo de nuevo.");
+            }
+        }
+    </script>
+
+</body>
+</html>
