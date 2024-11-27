@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pista</title>
+    <title>Feliz Cumpleaños Amor</title>
     <style>
         body {
             display: flex;
@@ -13,6 +13,9 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            background-image: url(FONDOCOMUN.SVG); /* Agrega la imagen SVG como fondo */
+            background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+            background-position: center; /* Centra el fondo */
         }
         .barra {
             background-color: #f0f0f0;
@@ -45,14 +48,14 @@
         }
 
         function validarTexto() {
-            const respuesta = prompt("Eres:");
+            const respuesta = prompt("La palabra es:");
             if (respuesta === null) {
                 // El usuario canceló el prompt
                 return;
             }
             if (respuesta.trim().toLowerCase() === "eres") {
                 // Si la respuesta es correcta, redirigir a la siguiente página
-                window.location.href = "pagina_siguiente.html"; // Cambia esto a la URL de la siguiente página
+                window.location.href = "Pista2.html"; // Cambia esto a la URL de la siguiente página
             } else {
                 alert("Respuesta incorrecta. Inténtalo de nuevo.");
             }
