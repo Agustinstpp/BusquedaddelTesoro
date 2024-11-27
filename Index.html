@@ -13,10 +13,23 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url(FONDOCOMUN.SVG); /* Agrega la imagen SVG como fondo */
+            background-image: url(FONDOCOMUN.SVG); /* Asegúrate de que la ruta sea correcta */
             background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
             background-position: center; /* Centra el fondo */
         }
+
+        @media (max-width: 768px) {
+            body {
+                background-image: url(FONDOCOMUN_MOBILE.SVG); /* Imagen para dispositivos móviles */
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-image: url(FONDOCOMUN_SMALL.SVG); /* Imagen para pantallas pequeñas */
+            }
+        }
+
         .barra {
             background-color: #f0f0f0;
             padding: 20px;
@@ -26,6 +39,7 @@
             margin-bottom: 20px;
             cursor: pointer; /* Cambia el cursor al pasar sobre la barra */
         }
+
         .boton-siguiente {
             position: absolute;
             bottom: 20px;
@@ -44,7 +58,7 @@
     <script>
         function cambiarTexto() {
             const barra = document.querySelector('.barra');
-            barra.textContent = "¿Se te perdio algo olor a pata?"; // Cambia el texto al hacer clic
+            barra.textContent = "¿Se te perdió algo olor a pata?"; // Cambia el texto al hacer clic
         }
 
         function validarTexto() {
