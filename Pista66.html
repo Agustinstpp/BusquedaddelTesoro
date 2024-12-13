@@ -55,7 +55,7 @@
 <body>
 
     <!-- Barra de texto que cambia al hacer clic -->
-    <div class="barra" onclick="mostrarVideo()">Ver Video</div>
+    <div class="barra" onclick="mostrarVideo(this)">Ver Video</div>
     <!-- Botón para validar la respuesta y pasar a la siguiente página -->
     <button class="boton-siguiente" onclick="validarTexto()">Siguiente</button>
 
@@ -66,11 +66,12 @@
     </video>
 
     <script>
-        // Función para mostrar el video
-        function mostrarVideo() {
+        // Función para mostrar el video y ocultar el botón
+        function mostrarVideo(element) {
             const video = document.getElementById('miVideo');
             video.style.display = 'block'; // Muestra el video
             video.play(); // Reproduce el video automáticamente
+            element.style.display = 'none'; // Oculta el botón "Ver Video"
         }
 
         // Función para validar la respuesta del usuario
